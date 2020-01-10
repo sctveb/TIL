@@ -32,3 +32,4 @@ Queuing -Stalled/Blocking - Proxy Negotiation - DNS Lookup - Initial Connection/
 
 Networking에서 WaterFall에 따라서 화면 전환이 어떻게 되는지 보기 위해 스크린샷을 찍어 볼 수 있음(개발을 위한 많은 추가 옵션이 있음)
 
+2020/01/09
