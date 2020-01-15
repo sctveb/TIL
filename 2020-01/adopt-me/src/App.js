@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import Pet from "./Pet";
+import { Router, Link } from "@reach/router";
 import SearchParams from "./SearchParams";
+import Details from "./Details";
+import ThemeContext from "./ThemeContext";
 
 /// Pure React
 // const App = () => {
@@ -39,11 +41,21 @@ import SearchParams from "./SearchParams";
 
 /// Hooks
 const App = () => {
+  const themeHook = useState("darkblue");
   return (
-    <div>
-      <h1 id="something-important">Adopt Me!</h1>
-      <SearchParams />
-    </div>
+    <React.StrictMode>
+      <ThemeContext.Provider value={themeHook}>
+        <div>
+          <header>
+            <Link to="/">Adopt Me!</Link>
+          </header>
+          <Router>
+            <SearchParams path="/" />
+            <Details path="/details/:id" />
+          </Router>
+        </div>
+      </ThemeContext.Provider>
+    </React.StrictMode>
   );
 };
 
